@@ -15,7 +15,7 @@ $productCollection = $productRendererViewModel->getProductCollection();
     <?php
     $count = 1;
     foreach ($productCollection as $product) {
-        echo '<p>' . $count++ . ' ' . $escaper->escapeHtml($product->getName());
+        echo '<p>' . $count++ . ' | ' . $product->getSku();
     }
     ?>
 <?php endif; ?>
