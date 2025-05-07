@@ -1,0 +1,22 @@
+<?php
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Denal05\Ad0e702ExerciseEavCollection\ViewModel\ProductRenderer $productRendererViewModel **/
+$productRendererViewModel = $block->getData('productRendererViewModel');
+$productCollection = $productRendererViewModel->getProductCollection();
+?>
+<h1><?= __("Simple Products Collection") ?></h1>
+<code><?= date("Y-m-d H:i:s") ?></code>
+
+<p>
+<?php if(!$productCollection): ?>
+    <?= __('No product collection was found. ¯\_(ツ)_/¯') ?>
+<?php else: ?>
+    <?php
+    $count = 1;
+    foreach ($productCollection as $product) {
+        echo '<p>' . $count++ . ' ' . $escaper->escapeHtml($product->getName());
+    }
+    ?>
+<?php endif; ?>
+</p>
