@@ -18,5 +18,6 @@ $productCollection = $productRendererViewModel->getProductCollection();
         echo '<p>' . $count++ . ' | ' . $product->getSku();
     }
     ?>
+    <p> collection->getSize() = <?= $productCollection->getSize(); ?> products
 <?php endif; ?>
 </p>
